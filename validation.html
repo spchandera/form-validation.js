@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validations</title>
+</head>
+
+<style>
+    .container {
+        width: 50%;
+        height: 300px;
+        margin: 40px auto;
+        background-color: blanchedalmond;
+    }
+
+    h1 {
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+
+    input {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 30px;
+    }
+
+    input[type='submit'] {
+        padding: 10px 88px;
+    }
+
+    p {
+        color: red;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="" onsubmit="return validform()">
+            <h1>hello word! forms</h1>
+            <input type="text" name="" placeholder="enter your name" id="username">
+            <p id="error"></p>
+            <input type="password" name="" placeholder="enter your password" id="password">
+            <p id="passerror"></p>
+            <input type="submit" value="save data">
+        </form>
+    </div>
+</body>
+<script>
+
+    let user = document.getElementById("username")
+    let pass = document.getElementById("password")
+    let done = 1
+
+
+    function validform() {
+        if (user.value == "") {
+            document.getElementById("error").innerHTML = "add your name"
+            done = 0
+        }
+        else if (user.value.length < 3) {
+            document.getElementById("error").innerHTML = "enter long name"
+            done = 0
+        }
+        else {
+            document.getElementById("").innerHTML = ""
+            done = 1
+        }
+        if (pass.value == "") {
+            document.getElementById("passerror").innerHTML = "add your password"
+            done = 0
+        }
+        else if (pass.value.length < 3) {
+            document.getElementById("passerror").innerHTML = "enter long password"
+            done = 0
+        }
+        else {
+            document.getElementById("").innerHTML = ""
+            done = 1
+        }
+
+        if (done) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+</script>
+
+</html>
